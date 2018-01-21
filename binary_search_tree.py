@@ -12,18 +12,18 @@ class BSTNode(object):
     def get(self, key, i, j):
         if key < self.key:
             i = i+1
-            print('Procurando pela esquerda ', i)
+            print('Esquerda ', i)
             return self.left.get(key, i, j) if self.left else None
         elif key > self.key:
             j = j+1
-            print('Procurando pela direita ', j)
+            print('Direita ', j)
             return self.right.get(key, i, j) if self.right else None
         else:
             return self
 
     #Adicionar um elemento na árvore
     def add(self, node):
-        if node.value < self.value:
+        if node.key < self.key:
             if self.left is None:
                 self.left = node
             else:
@@ -33,7 +33,7 @@ class BSTNode(object):
                 self.right = node
             else:
                 self.right.add(node)
-        print("Node adicionado: ", node)
+
 
     #Remover um elemento da árvore
     def remove(self, key):
