@@ -71,3 +71,18 @@ class BSTNode(object):
             return self.right
         self.left = self.left._remove_min
         return self
+
+
+    def traverse(self, visit, order='pre'):
+        """Percorre a árvore na ordem fornecida como parâmetro (pre, pos ou in)
+           visitando os nós com a função visit() recebida como parâmetro."""
+        if order == 'pre':
+            visit(self)
+        if self.left is not None:
+            self.left.traverse(visit, order)
+        if order == 'in':
+            visit(self)
+        if self.right is not None:
+            self.right.traverse(visit, order)
+        if order == 'post':
+            visit(self)

@@ -11,7 +11,7 @@ def main():
 
     choice = None
     while choice != '0':
-        choice = input ("Digite 1 para buscar, 2 para adicionar, 3 para remover um elemento ou 0 para sair: ")
+        choice = input ("Digite 1 para buscar, 2 para adicionar, 3 para remover um elemento, 4 para visualizar a árvore ou 0 para sair: ")
         if choice == '1':
             print('BUSCAR ELEMENTO')
             key = input("Digite o elemento que deseja buscar: ")
@@ -39,6 +39,9 @@ def main():
             key = int(key)
             root.remove(key)
             print('Node removido. \n\n')
+
+        elif choice == '4':
+            root.traverse(print self.key, 'pre')
 
         else:
             print("Escolha uma das opções.")
