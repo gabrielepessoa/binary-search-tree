@@ -11,4 +11,4 @@ class Book (object):
         self.author = author
         self.edition = edition
 
-    
+    def insertBook
